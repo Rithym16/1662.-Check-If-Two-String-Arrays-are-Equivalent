@@ -1,27 +1,14 @@
 class Solution {
 public:
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
-        int i=0,j=0;  //for string 1
-        int x=0,y=0;  //for string 2
-        while(i<word1.size() && j<word2.size()){
-            if(word1[i][j]!=word2[x][y]){
-                return false;
-            }
-            else if(word1[i][j]==word2[x][y]){
-                j++;
-                y++;
-            }
-            if(word1[i].size()==0){
-                i=i+1;
-                j=0;
-            }
-            if(word2[x].size()==0){
-                x=x+1;
-                y=0;
-            }
-
+        string w1="";
+        string w2="";
+        for(int i=0;i<word1.size();i++){
+            w1=w1+word1[i];
         }
-        return i==word1.size() && x==word2.size();
-
-}
+        for(int i=0;i<word2.size();i++){
+            w2=w2+word2[i];
+        }
+        return w1==w2;
+    }
 };
